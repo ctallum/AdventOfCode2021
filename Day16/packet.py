@@ -26,8 +26,7 @@ class Packet:
         self.len = len(self.data)
 
     @staticmethod
-    def decode(content: str, length_type: int,
-               sub_packet_length: int) -> Tuple[str, list]:
+    def decode(content: str, length_type: int, packet_length: int) -> Tuple[str, list]:
         used_data = ''
         children = []
         count = 0
@@ -43,7 +42,7 @@ class Packet:
             if length_type == 1:
                 count += 1
 
-            if count == sub_packet_length:
+            if count == packet_length:
                 return used_data, children
 
     @staticmethod
