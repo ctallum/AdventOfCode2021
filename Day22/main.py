@@ -1,7 +1,6 @@
 from region import *
 from functions import *
 
-
 with open('input.txt') as f:
     raw_data = [a.strip() for a in f.readlines()]
     state_data = [int(a[1].replace('n','1').replace('f','0')) for a in raw_data]
