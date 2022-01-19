@@ -36,5 +36,4 @@ for region in final_regions:
     if region.state == 1:
         count += region.area
 
-
 print(f'Solution to part 2: {count}')
